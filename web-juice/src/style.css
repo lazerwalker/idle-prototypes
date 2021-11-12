@@ -1,0 +1,17 @@
+#start {
+  position: absolute;
+  bottom: 5vw;
+  left: 5vw;
+  width: 120px;
+  height: 50pt;
+}
+
+.window {
+  border: 1px solid #333;
+  background-color: #aaa;
+  width: 140px;
+  height: 120px;
+
+  position: absolute;
+  display: inline-block;
+}
