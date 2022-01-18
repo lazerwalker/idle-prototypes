@@ -37,11 +37,11 @@ function spawnPopup() {
       duration: 20
     }
   )
-  screenshake()
+  screenshake($el)
 } 
 
-function screenshake() {
-  document.body.animate(
+function screenshake($el: HTMLElement) {
+  ($el || document.body).animate(
     [
       { transform: "translate(1px, 1px) rotate(0deg)" },
       { transform: "translate(-1px, -1px) rotate(-1deg)" },
