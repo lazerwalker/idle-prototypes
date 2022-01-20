@@ -8,8 +8,12 @@
   display: inline-block;
 }
 
-/* adapted from https://codepen.io/brundolf/pen/wzrWdy */
+body {
+ background: url('xpbackground.png');
+ background-size: cover;
+}
 
+/* adapted from https://codepen.io/brundolf/pen/wzrWdy */
   .taskbar {
     position:absolute;
     z-index:100;
