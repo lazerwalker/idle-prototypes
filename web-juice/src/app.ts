@@ -1,4 +1,5 @@
 import random from 'lodash/random'
+import "xp.css/dist/XP.css";
 
 window.addEventListener("DOMContentLoaded", () => {
   console.log("We done loaded")
@@ -8,6 +9,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function spawnPopup() {
   const $el = document.createElement('div')
+  // TODO: lol, use a templating language
+  $el.innerHTML = `
+  <div class="title-bar">
+    <div class="title-bar-text">Title</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>There's so much room for activities!</p>
+  </div>`;
   $el.className = 'window'
   console.log("Spawning popup")
 
