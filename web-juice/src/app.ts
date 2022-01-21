@@ -30,13 +30,15 @@ function spawnPopup() {
   console.log(`${random(0, 70)}vw;`, $el.style.left, $el.style.top)
 
   $el.addEventListener("click", (e) => {
-    const hide = $el.animate(
+  currentWindowCount -= 1
+  renderWindowCount()    
+  const hide = $el.animate(
       [
         { transform: "scale(1)"},
         { transform: "scale(0)"}
       ],
       {
-       duration: 400
+       duration: 60
       }
     )
     hide.onfinish = () => $el.remove()
@@ -48,7 +50,7 @@ function spawnPopup() {
       { transform: "scale(1)"}
     ],
     {
-      duration: 200
+      duration: 60
     }
   )
   //screenshake()
