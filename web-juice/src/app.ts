@@ -36,7 +36,7 @@ function spawnPopup() {
         { transform: "scale(0)"}
       ],
       {
-       duration: 40
+       duration: 400
       }
     )
     hide.onfinish = () => $el.remove()
@@ -48,7 +48,7 @@ function spawnPopup() {
       { transform: "scale(1)"}
     ],
     {
-      duration: 20
+      duration: 200
     }
   )
   //screenshake()
