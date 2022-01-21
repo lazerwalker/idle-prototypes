@@ -2,15 +2,18 @@
 
 A handful of targetted prototypes for a sample project.
 
-Not yet at a point where these are being publicly hosted -- run `npm run start` within a folder to build and serve it.
-
 I'm primarily doing dev in a Codespace, haven't tested local dev.
+
+
+As each individual prototype gets to a deployable state, I'm adding a build step in `.github/workflows/main.yml` to deploy it to a subdirectory of this repo's GH pages. See below for links where applicable.
 
 # Prototyping Plans
 
 I have a handful of targetted prototypes planned.
 
 ## 1. Juice Test (Web)
+https://lazerwalker.com/idle-prototypes/web-juice
+
 The idea of an idle game that feels juicy -- at the level of individual taps, rather than showing pretty animations in secondary response to your taps -- is relatively (but not completely) novel. 
 
 **Deliverable:** a web app, optimized for mobile, that looks like a vintage Windows desktop. Tapping the Start Menu spawns a random window; tapping the window closes it. It should feel "juicy".
