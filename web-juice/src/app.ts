@@ -10,6 +10,12 @@ window.addEventListener("DOMContentLoaded", () => {
   $start.addEventListener("click", spawnPopup)
 })
 
+// Attempt to prevent scrolling
+window.addEventListener("scroll", (e) => {
+  e.preventDefault();
+  window.scrollTo(0, 0);
+});
+
 function spawnPopup() {
   if (currentWindowCount >= maxWindows) return
   

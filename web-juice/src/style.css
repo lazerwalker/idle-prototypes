@@ -11,6 +11,8 @@
 body {
  background: url('xpbackground.png');
  background-size: cover;
+
+ position: fixed; left: 0; top: 0; right: 0; bottom: 0;
 }
 
 /* adapted from https://codepen.io/brundolf/pen/wzrWdy */
