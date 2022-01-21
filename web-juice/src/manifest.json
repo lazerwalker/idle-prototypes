@@ -1,0 +1,13 @@
+{
+  "name": "XP Juice Demo",
+  "short_name": "Juicy XP",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "https://lazerwalker.com/idle-prototypes/web-juice",
+  "scope": "https://lazerwalker.com/idle-prototypes/web-juice",
+  "permissions": [ 
+    "unlimitedStorage",
+    "fullscreen"
+   ]
+}
