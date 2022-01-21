@@ -1,13 +1,21 @@
 import random from 'lodash/random'
 import "xp.css/dist/XP.css";
 
+const maxWindows = 15
+let currentWindowCount = 0
+let currentScore = 0
+
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("We done loaded")
   const $start = document.getElementById("start")
   $start.addEventListener("click", spawnPopup)
 })
 
 function spawnPopup() {
+  if (currentWindowCount >= maxWindows) return
+  
+  currentWindowCount += 1
+  renderWindowCountAndScore()
+
   const $el = document.createElement('div')
   // TODO: lol, use a templating language
   $el.innerHTML = `
@@ -30,18 +38,19 @@ function spawnPopup() {
   console.log(`${random(0, 70)}vw;`, $el.style.left, $el.style.top)
 
   $el.addEventListener("click", (e) => {
-  currentWindowCount -= 1
-  renderWindowCount()    
-  const hide = $el.animate(
-      [
-        { transform: "scale(1)"},
-        { transform: "scale(0)"}
-      ],
-      {
-       duration: 60
-      }
-    )
-    hide.onfinish = () => $el.remove()
+    currentWindowCount -= 1
+    currentScore += 1
+    renderWindowCountAndScore()    
+    const hide = $el.animate(
+        [
+          { transform: "scale(1)"},
+          { transform: "scale(0)"}
+        ],
+        {
+        duration: 60
+        }
+      )
+      hide.onfinish = () => $el.remove()
   })
   document.body.appendChild($el)
   $el.animate(
@@ -55,6 +64,12 @@ function spawnPopup() {
   )
   //screenshake()
 } 
+
+function renderWindowCountAndScore() {
+  document.getElementById('score').innerText = currentScore.toString()
+  document.getElementById('memory').innerText = `${Math.floor(currentWindowCount / maxWindows * 100)}%`
+  // tps, highets-tps
+}
 
 function screenshake($el?: HTMLElement) {
   ($el || document.body).animate(
